@@ -1,21 +1,26 @@
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
+<div class="mt-5">
+  <%= link_to 'Events', events_path %>
+  /
+  <%= link_to  @event.name, @event %>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
+<div class="card">
+  <div class="card-header">
+    <h2 class="text-primary text-center py-2">
+      <%= @event.name %>
+    </h2>
+  </div>
 
-<p>
-  <strong>Date:</strong>
-  <%= @event.date %>
-</p>
+  <div class="card-body">
+    <strong>Description:</strong>
+    <%= @event.description %>
+    <br>
+    <strong>Date:</strong>
+    <%= @event.date %>
+  </div>
 
-<p>
-  <strong>Creator:</strong>
-  <%= @event.creator.name %>
-</p>
-
-<%= link_to 'Back', events_path %>
+  <div class="card-footer">
+    <strong>Creator:</strong>
+    <%= @event.creator.name %>
+  </div>
+</div>
