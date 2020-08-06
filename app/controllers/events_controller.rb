@@ -8,6 +8,9 @@ class EventsController < ApplicationController
   end
 
   def show
+    @invitation = EventAttendance.new
+    @event = Event.find(params[:id])
+    @uninvited = User.where.not(id: @event.guests)
   end
 
   def new
