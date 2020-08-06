@@ -8,8 +8,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     respond_to do |format|
-      flash[:success] = "You signed up successfully."
       if @user.save
+        flash[:success] = "You signed up successfully."
         format.html { redirect_to root_path}
         format.json { render :show, status: :created, location: @user }
       else
