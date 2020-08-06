@@ -1,4 +1,4 @@
-<h1>Login</h1>
+<h1 class="text-center my-4">Login</h1>
 <%= form_with(url: login_path, method: 'post', local: true) do |f| %>
   <div class="form-group">
     <%= f.label :name %>
@@ -12,6 +12,5 @@
 
   <div class="form-group">
     <%= f.submit class: "btn btn-primary" %>
-  </div>
   </div>
 <% end %>

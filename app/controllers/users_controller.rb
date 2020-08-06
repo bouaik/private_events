@@ -1,8 +1,4 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show]
-
-  def show
-  end
 
   def new
     @user = User.new
@@ -14,7 +10,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       flash[:success] = "You signed up successfully."
       if @user.save
-        format.html { redirect_to @user}
+        format.html { redirect_to root_path}
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
