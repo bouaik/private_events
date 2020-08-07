@@ -7,6 +7,6 @@ class Event < ApplicationRecord
   has_many :event_attendances, foreign_key: :attendances_id
   has_many :guests, through: :event_attendances, source: :attende
 
-  scope :future_events, -> { all.includes(:creator).where('date >= ? ', Date.today) }
-  scope :past_events, -> { all.includes(:creator).where('date < ? ', Date.today) }
+  scope :future_events, -> { where('date >= ? ', Date.today) }
+  scope :past_events, -> { where('date < ? ', Date.today) }
 end
