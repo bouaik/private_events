@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    protect_from_forgery with: :exception
+  protect_from_forgery with: :exception
 
   # rubocop:disable Style/DoubleNegation:
 
@@ -21,4 +21,5 @@ class ApplicationController < ActionController::Base
     flash[:danger] = 'You have to log in to perform this action'
     redirect_to root_path
   end
+  # rubocop:enable Style/DoubleNegation:
 end

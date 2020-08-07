@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  resources :events, only: [:create, :show, :index, :new]
+  resources :events, only: %i[create show index new]
   resources :users, only: [:create]
   # resources :sessions, only: [:new, :create, :destroy]
   get 'signup', to: 'users#new'
