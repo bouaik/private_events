@@ -47,7 +47,7 @@
 
         <div class="form-group">
         <%= f.label "Memeber to invit" %><br>
-        <%= collection_select(:invitation, :attende_id, @uninvited, :id, :name) %>
+        <%= collection_select(:invitation, :attende_id, @uninvited, :id, :name, {}, { :class => "custom-select" }) %>
         </div>
 
         <div class="form-group">
