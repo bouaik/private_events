@@ -3,6 +3,10 @@ require 'rails_helper'
 RSpec.describe User, type: :model do 
 
     describe "Valiations" do
+        it "expect user to be valid" do 
+            user = FactoryBot.build(:user)
+            expect(user).to be_valid
+        end
         it { should validate_presence_of(:name) }
         it { should validate_length_of(:name).is_at_most(30) }
         it { should validate_presence_of(:email) }
