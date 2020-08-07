@@ -48,6 +48,11 @@ then start your server
 $ rails s
 ````
 
+to run tests
+```
+bundle exec spec
+```
+
 ## Authors
 
 
