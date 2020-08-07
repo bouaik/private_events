@@ -18,11 +18,13 @@ class UsersController < ApplicationController
     end
   end
 
-  private
-
-  def set_user
+  def show
     @user = User.find(params[:id])
+    @upcoming_events = @user.upcoming_events
+    @previous_events = @user.previous_events
   end
+
+  private
 
   def user_params
     params.require(:user).permit(:name, :email)

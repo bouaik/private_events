@@ -12,4 +12,15 @@ class User < ApplicationRecord
   def to_s
     name
   end
+
+  # scope :upcoming_events, -> { events.where('date >= ?', Date.today) }
+  # scope :previous_events, -> { events.where('date < ?', Date.today) }
+
+  def upcoming_events
+    events.where('date >= ?', Date.today)
+  end
+
+  def previous_events
+    events.where('date < ?', Date.today)
+  end
 end

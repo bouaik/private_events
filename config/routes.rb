@@ -2,7 +2,7 @@
 
 Rails.application.routes.draw do
   resources :events, only: %i[create show index new]
-  resources :users, only: [:create]
+  resources :users, only: [:create, :show]
   # resources :sessions, only: [:new, :create, :destroy]
   get 'signup', to: 'users#new'
   get 'login', to: 'sessions#new'

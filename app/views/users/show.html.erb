@@ -1,0 +1,32 @@
+<h1 class="text-center py-3"><%= @user.name %> Events</h1>
+
+<h5>Upcoming events</h5>
+<div class="card-columns">
+    <% @upcoming_events.each do |event| %>
+        <div class="card">
+            <div class="card-header">
+                <%= link_to event.name, event_path(event) %>
+            </div>
+            <div class="card-body">
+                <%= event.description %><br>
+                <%= event.date %>
+            </div>
+        </div>
+    <% end %>
+</div>
+
+
+<h5>Previous events</h5>
+<div class="card-columns">
+    <% @previous_events.each do |event| %>
+        <div class="card">
+            <div class="card-header">
+                <%= link_to event.name, event_path(event) %>
+            </div>
+            <div class="card-body">
+                <%= event.description %><br>
+                <%= event.date %>
+            </div>
+        </div>
+    <% end %>
+</div>
