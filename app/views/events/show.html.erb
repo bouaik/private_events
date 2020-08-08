@@ -22,7 +22,7 @@
 
       <div class="card-footer">
         <strong>Creator:</strong>
-        <%= @event.creator.name %>
+        <%= @event.creator.email %>
       </div>
     </div>
   </div>
@@ -30,7 +30,7 @@
     <h4 class="text-center">Guests</h4>
     <ol class="text-success">
       <% @event.guests.each do |guest| %>
-          <li><%= guest.name %></li>
+          <li><%= guest.email %></li>
       <% end %>
     </ol>
   </div>
@@ -47,7 +47,7 @@
 
         <div class="form-group">
         <%= f.label "Memeber to invit" %><br>
-        <%= collection_select(:invitation, :attende_id, @uninvited, :id, :name, {}, { :class => "custom-select" }) %>
+        <%= collection_select(:invitation, :attende_id, @uninvited, :id, :email, {}, { :class => "custom-select" }) %>
         </div>
 
         <div class="form-group">

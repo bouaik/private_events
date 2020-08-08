@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def new; end
 
   def create
-    user = User.find_by(name: params[:name])
+    user = User.find_by(email: params[:email])
     if user && user.email == params[:email]
       session[:user_id] = user.id
       flash[:success] = 'Yoy logged in successfully.'

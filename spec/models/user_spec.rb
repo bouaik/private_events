@@ -6,8 +6,6 @@ RSpec.describe User, type: :model do
       user = FactoryBot.build(:user)
       expect(user).to be_valid
     end
-    it { should validate_presence_of(:name) }
-    it { should validate_length_of(:name).is_at_most(30) }
     it { should validate_presence_of(:email) }
     it { should validate_uniqueness_of(:email).case_insensitive }
     it { should allow_value('example@gmail.com').for(:email) }

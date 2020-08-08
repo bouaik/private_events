@@ -15,7 +15,7 @@
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <%= current_user.name %>
+                <%= current_user.email %>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <%= link_to "log out", logout_path, class:"dropdown-item" %>
