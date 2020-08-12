@@ -1,24 +1,69 @@
-# README
+# Private events
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+In this project, you will build an application named Private Events and that behaves similar to Eventbrite. The main goal is to put in practice the main concepts of Associations in rails. [Microverse](https:www.microverse.org/) - @microverseinc
 
-* Ruby version
+# Associations([The Odin Project](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations))
 
-* System dependencies
+## Built With
 
-* Configuration
+- Ruby on Rails
+- Postgresql
 
-* Database creation
+## Run
 
-* Database initialization
+To run this peoject, you need ruby 2.7.1 installed in your environement, you can check by using 
+```
+$ ruby -v
+````
+and you must have rails 6.0.3.2 in you environement, you can check by using 
 
-* How to run the test suite
+```
+$ rails -v
+````
+and you must have postgres in your system
 
-* Services (job queues, cache servers, search engines, etc.)
+then 
 
-* Deployment instructions
+- Clone repo
 
-* ...
+- install the required dependencies bu runing 
+
+```
+$ bundle install
+````
+then
+```
+$ yarn
+````
+then
+```
+$ rails db:migrate
+````
+
+
+then start your server 
+
+```
+$ rails s
+````
+
+to run tests
+```
+bundle exec spec
+```
+
+## Authors
+
+
+👤 **Lhoussaine Bouaik**
+- Github: [@bouaik](https://github.com/bouaik)
+- Twitter: [@bouaik](https://twitter.com/LhoussaineBoua1 )
+- Linkedin: [bouaik](https://www.linkedin.com/in/lhoussaine-bouaik-06858419a/)
+
+
+
+## 📝 License
+
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.
+

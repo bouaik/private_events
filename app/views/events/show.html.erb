@@ -1,0 +1,59 @@
+<div class="mt-5">
+  <%= link_to 'Events', events_path %>
+  /
+  <%= link_to  @event.name, @event %>
+</div>
+<div class="row">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="text-primary text-center py-2">
+          <%= @event.name %>
+        </h2>
+      </div>
+
+      <div class="card-body">
+        <strong>Description:</strong>
+        <%= @event.description %>
+        <br>
+        <strong>Date:</strong>
+        <%= @event.date %>
+      </div>
+
+      <div class="card-footer">
+        <strong>Creator:</strong>
+        <%= @event.creator.email %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <h4 class="text-center">Guests</h4>
+    <ol class="text-success">
+      <% @event.guests.each do |guest| %>
+          <li><%= guest.email %></li>
+      <% end %>
+    </ol>
+  </div>
+</div>
+
+<% if current_user == @event.creator %>
+  <div class="card mt-3">
+    <div class="card-header">
+      <h5>Invite poeple to your event</h5>
+    </div> 
+    <div class="card-body">
+      <%= form_with(url: invitation_path, method: 'post', local: true) do |f| %>
+        <%= hidden_field(:invitation, :attendances_id, value: @event.id) %>
+
+        <div class="form-group">
+        <%= f.label "Memeber to invit" %><br>
+        <%= collection_select(:invitation, :attende_id, @uninvited, :id, :email, {}, { :class => "custom-select" }) %>
+        </div>
+
+        <div class="form-group">
+          <%= f.submit "Invite", class: "form-control btn btn-primary" %>
+        </div>
+      <% end %>
+      </div>
+  </div>
+<% end %>
