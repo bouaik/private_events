@@ -1,0 +1,48 @@
+<h1 class="text-center my-2">Events</h1>
+
+<%= link_to 'New Event', new_event_path, class: "btn btn-primary mb-3" %>
+
+<h2>Future events</h2>
+<div class="card-columns bg-success p-3">
+  <% @future_events.each do |event| %>
+    <div class="card">
+      <div class="card-header">
+        <h3 class="text-center">
+          <%= link_to event.name, event %>
+        </h3>
+      </div>
+        <div class="card-body">
+          <p class="mb-2">
+            <%= event.description %>
+          </p>
+          Date : <%= event.date %>
+        </div>
+        <div class="card-footer">
+          Creator : <%= event.creator.email %>
+        </div>
+    </div>
+  <% end %>
+</div>
+
+<h2>Past events</h2>
+<div class="card-columns bg-danger p-3">
+  <% @past_events.each do |event| %>
+    <div class="card">
+      <div class="card-header">
+        <h3 class="text-center">
+          <%= link_to event.name, event %>
+        </h3>
+      </div>
+        <div class="card-body">
+          <p class="mb-2">
+            <%= event.description %>
+          </p>
+          Date : <%= event.date %>
+        </div>
+        <div class="card-footer">
+          Creator : <%= event.creator.name %>
+        </div>
+    </div>
+  <% end %>
+</div>
+
